@@ -24,6 +24,9 @@ import com.kohlschutter.boilerpipe.labels.LabelAction;
  * Default {@link TagAction}s. Seem to work well.
  */
 public class DefaultTagActionMap extends TagActionMap {
+  /**
+   * (“script, style, noscript, option, .hidden, amp-app-banner, amp-img, amp-state, amp-sidebar, amp-sticky-ad, amp-ad, amp-social-share, amp-carousel, amp-iframe, amp-embed, amp-analytics, amp-geo, amp-consent, amp-user-notification”)
+   */
 
   /**
      * 
@@ -40,6 +43,24 @@ public class DefaultTagActionMap extends TagActionMap {
     setTagAction("EMBED", CommonTagActions.TA_IGNORABLE_ELEMENT);
     setTagAction("APPLET", CommonTagActions.TA_IGNORABLE_ELEMENT);
     setTagAction("LINK", CommonTagActions.TA_IGNORABLE_ELEMENT);
+
+    /// Hard code ignore all AMP tags
+    setTagAction("AMP-USER-NOTIFICATION", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-APP-BANNER", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-IMG", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-STATE", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-SIDEBAR", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-STICKY-AD", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-AD", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-SOCIAL-SHARE", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-CAROUSEL", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-IFRAME", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-EMBED", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-ANALYTICS", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-GEO", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-CONSENT", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-AD-ENABLE-REFRESH", CommonTagActions.TA_IGNORABLE_ELEMENT);
+    setTagAction("AMP-TWITTER", CommonTagActions.TA_IGNORABLE_ELEMENT);
 
     setTagAction("A", CommonTagActions.TA_ANCHOR_TEXT);
     setTagAction("BODY", CommonTagActions.TA_BODY);
