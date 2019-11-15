@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.kohlschutter.boilerpipe</groupId>
     <artifactId>boilerpipe-parent</artifactId>
-    <version>5.1-LATEST-6</version>
+    <version>5.2.0-DB-SNAPSHOT</version>
   </parent>
   <name>boilerpipe-common</name>
   <properties>
@@ -15,12 +15,14 @@
   </properties>
 
   <repositories>
-
-    <repository>
-      <id>spinn3r-public</id>
-      <url>http://public.maven.spinn3r.com/</url>
-    </repository>
-
+   <repository>
+     <id>demandbase-gcp-release</id>
+     <url>gs://db-cm-dev/mavenrepository/release</url>
+   </repository>
+   <repository>
+     <id>demandbase-gcp-snapshots</id>
+     <url>gs://db-cm-dev/mavenrepository/snapshots</url>
+   </repository>
   </repositories>
 
   <dependencies>
@@ -50,12 +52,26 @@
     </dependency>
 
     <dependency>
-      <groupId>com.spinn3r.artemis.corpus.test</groupId>
+      <groupId>com.demandbase.artemis.corpus.test</groupId>
       <artifactId>artemis-corpus-test-framework</artifactId>
-      <version>5.1.505</version>
+      <version>5.2.0-DB-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
 
   </dependencies>
+
+ <distributionManagement>
+    <repository>
+       <id>release</id>
+         <name>demandbase-gcp-release</name>
+         <url>gs://db-cm-dev/mavenrepository/release</url>
+    </repository>
+     <snapshotRepository>
+       <id>snapshots</id>
+         <name>demandbase-gcp-snapshots</name>
+         <url>gs://db-cm-dev/mavenrepository/snapshots</url>
+     </snapshotRepository>
+ </distributionManagement>
+
 
 </project>

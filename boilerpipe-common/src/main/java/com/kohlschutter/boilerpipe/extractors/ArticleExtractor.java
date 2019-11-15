@@ -19,6 +19,7 @@ package com.kohlschutter.boilerpipe.extractors;
 
 import com.kohlschutter.boilerpipe.BoilerpipeProcessingException;
 import com.kohlschutter.boilerpipe.document.TextDocument;
+import com.kohlschutter.boilerpipe.filters.debug.PrintDebugFilter;
 import com.kohlschutter.boilerpipe.filters.english.IgnoreBlocksAfterContentFilter;
 import com.kohlschutter.boilerpipe.filters.english.NumWordsRulesClassifier;
 import com.kohlschutter.boilerpipe.filters.english.TerminatingBlocksFinder;
@@ -48,6 +49,7 @@ public final class ArticleExtractor extends ExtractorBase {
   public boolean process(TextDocument doc) throws BoilerpipeProcessingException {
     return
 
+            ///PrintDebugFilter.INSTANCE.process(doc) |
     TerminatingBlocksFinder.INSTANCE.process(doc)
         | new DocumentTitleMatchClassifier(doc.getTitle()).process(doc)
         | NumWordsRulesClassifier.INSTANCE.process(doc)
