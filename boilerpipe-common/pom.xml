@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.kohlschutter.boilerpipe</groupId>
     <artifactId>boilerpipe-parent</artifactId>
-    <version>5.2.0-DB-SNAPSHOT</version>
+    <version>5.2.0-DB</version>
   </parent>
   <name>boilerpipe-common</name>
   <properties>
